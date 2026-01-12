@@ -180,16 +180,120 @@ textarea.form-control {
   resize: vertical;
 }
 
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+
+  /* Fix layouts that are hardcoded as grid columns in JSX */
+  div[style*="grid-template-columns: 1fr 2fr"],
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Services Page Fixes */
+  section .container>div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    border-bottom: 2px solid var(--color-border) !important;
+    padding-bottom: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
 @media (max-width: 768px) {
+
+  /* Typography Scaling */
+  html {
+    font-size: 14px;
+  }
+
   h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
   }
 
   .container {
-    padding: 0 1rem;
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  /* Top Bar */
+  .top-bar .container {
+    justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  /* Navbar Container */
+  nav.container {
+    flex-wrap: wrap;
+    padding: 1rem !important;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  /* Navigation Links - Stack them */
+  nav.container ul {
+    flex-direction: column;
+    gap: 0.5rem !important;
+    width: 100%;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  nav.container ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.container ul li a {
+    display: block;
+    padding: 0.5rem;
+  }
+
+  /* Footer */
+  footer .container {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  footer h4 {
+    margin-top: 2rem;
+  }
+
+  footer .container>div:first-child h4 {
+    margin-top: 0;
+  }
+
+  div[style*="width: 40px"] {
+    margin: 1rem auto !important;
+  }
+
+  /* Table responsive wrapper by overflow */
+  .container>div {
+    overflow-x: auto;
+  }
+
+  /* Contact Form */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
   }
 }
